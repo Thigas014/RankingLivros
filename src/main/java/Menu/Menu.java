@@ -22,11 +22,14 @@ public class Menu implements InterfaceMenu {
         Scanner scanner = new Scanner(System.in);
         int opc;
 
-        do{
-            System.out.println("---- Menu Principal ----");
-            System.out.println("1. Listagem dos Melhores Livros");
-            System.out.println("2. Ranking dos Melhores Autores");
-            System.out.println("3. Sair");
+        do {
+            System.out.println("\n-------------------------------------------------");
+            System.out.printf("%-25s\n", "               Menu Principal               ");
+            System.out.println("-------------------------------------------------");
+            System.out.printf("%-5s%-30s\n", 1, "Listagem dos Melhores Livros");
+            System.out.printf("%-5d%-30s\n", 2, "Ranking dos Melhores Autores");
+            System.out.printf("%-5d%-30s\n", 3, "Sair");
+            System.out.println("-------------------------------------------------");
             System.out.print("Escolha uma opção: ");
             opc = scanner.nextInt();
 
@@ -45,6 +48,7 @@ public class Menu implements InterfaceMenu {
     public void carregarDados() {
         livros.add(new Livro("Livro A", "Autor X", 4.5, 200, 100, "1234567890", "1234567890123", "Português", 320));
         livros.add(new Livro("Livro B", "Autor Y", 5, 150, 80, "0987654321", "0987654321098", "Inglês", 280));
+
         autores.add(new Autor("Autor X", 4.5, 1));
         autores.add(new Autor("Autor Y", 5, 1));
     }
@@ -52,18 +56,50 @@ public class Menu implements InterfaceMenu {
     @Override
     public void listarMelhoresLivros() {
         livros.sort(Comparator.comparingDouble(LivroInterface::getNotaMedia).reversed());
-        System.out.println("\n--- Lista dos Melhores Livros ---");
+
+        System.out.println("\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",
+                "Título",
+                "Autor",
+                "Nota Média",
+                "Avaliações",
+                "Resenhas",
+                "ISBN",
+                "ISBN-13",
+                "Idioma",
+                "Páginas");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
         for (LivroInterface livro : livros) {
-            System.out.println(livro + "\n");
+            System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",
+                    livro.getTitulo(),
+                    livro.getAutor(),
+                    livro.getNotaMedia(),
+                    livro.getNumeroAvaliacoes(),
+                    livro.getNumeroResenhas(),
+                    livro.getIsbn(),
+                    livro.getIsbn13(),
+                    livro.getIdioma(),
+                    livro.getNumeroPaginas());
         }
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     }
 
     @Override
     public void listarMelhoresAutores() {
         autores.sort(Comparator.comparingDouble(InterfaceAutor::getNotaMediaGeral).reversed());
-        System.out.println("\n--- Ranking dos Melhores Autores ---");
+
+        System.out.println("\n------------------------------------------------------------------------");
+        System.out.printf("%-20s%-20s%-20s\n", "Nome do Autor", "Nota Média Geral", "Livros Bem Avaliados");
+        System.out.println("-------------------------------------------------------------------------");
+
         for (InterfaceAutor autor : autores) {
-            System.out.println(autor + "\n");
+            System.out.printf("%-30s%-20.2f%-20d\n",
+                    autor.getNome(),
+                    autor.getNotaMediaGeral(),
+                    autor.getNumeroLivrosBemAvaliados());
         }
+        System.out.println("---------------------------------------------------------------");
     }
+
 }

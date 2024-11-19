@@ -35,9 +35,9 @@ public class Livro implements LivroInterface {
     public String getIdioma() { return idioma; }
     public int getNumeroPaginas() { return numeroPaginas; }
 
-    @Override
-    public String toString() {
-        return "Título: " + titulo + "\nAutor: " + autor + "\nNota Média: " + notaMedia + "\nAvaliações: " + numeroAvaliacoes +
-                "\nResenhas: " + numeroResenhas + "\nISBN: " + isbn + "\nISBN-13: " + isbn13 + "\nIdioma: " + idioma + "\nPáginas: " + numeroPaginas;
-    }
+    //@Override
+    //public String toString() {
+        //return "Título: " + titulo + "\nAutor: " + autor + "\nNota Média: " + notaMedia + "\nAvaliações: " + numeroAvaliacoes +
+        //        "\nResenhas: " + numeroResenhas + "\nISBN: " + isbn + "\nISBN-13: " + isbn13 + "\nIdioma: " + idioma + "\nPáginas: " + numeroPaginas;
+   // }
 }

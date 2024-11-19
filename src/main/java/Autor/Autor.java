@@ -17,8 +17,8 @@ public class Autor implements InterfaceAutor {
     public double getNotaMediaGeral() { return notaMediaGeral; }
     public int getNumeroLivrosBemAvaliados() { return numeroLivrosBemAvaliados; }
 
-    @Override
-    public String toString() {
-        return "Autor: " + nome + "\nNota Média Geral: " + notaMediaGeral + "\nLivros Bem Avaliados: " + numeroLivrosBemAvaliados;
-    }
+    //@Override
+    //public String toString() {
+    //    return "Autor: " + nome + "\nNota Média Geral: " + notaMediaGeral + "\nLivros Bem Avaliados: " + numeroLivrosBemAvaliados;
+    //}
 }
