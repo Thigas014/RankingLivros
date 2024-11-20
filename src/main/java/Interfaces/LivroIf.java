@@ -1,6 +1,6 @@
 package Interfaces;
 
-public interface LivroInterface {
+public interface LivroIf {
     String getTitulo();
     String getAutor();
     double getNotaMedia();
