@@ -1,9 +1,9 @@
 package Livro;
 
 
-import Interfaces.LivroInterface;
+import Interfaces.LivroIf;
 
-public class Livro implements LivroInterface {
+public class Livro implements LivroIf {
     private String titulo;
     private String autor;
     private double notaMedia;

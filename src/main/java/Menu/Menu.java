@@ -1,9 +1,9 @@
 package Menu;
 
 import Autor.Autor;
-import Interfaces.InterfaceAutor;
-import Interfaces.InterfaceMenu;
-import Interfaces.LivroInterface;
+import Interfaces.AutorIf;
+import Interfaces.MenuIf;
+import Interfaces.LivroIf;
 import Livro.Livro;
 
 import java.util.ArrayList;
@@ -11,9 +11,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-public class Menu implements InterfaceMenu {
-    private List<LivroInterface> livros =new ArrayList<>();
-    private List<InterfaceAutor> autores = new ArrayList<>();
+public class Menu implements MenuIf {
+    private List<LivroIf> livros =new ArrayList<>();
+    private List<AutorIf> autores = new ArrayList<>();
 
     public static void main(String[] args){
         Menu sistemaMenu = new Menu();
@@ -55,7 +55,7 @@ public class Menu implements InterfaceMenu {
 
     @Override
     public void listarMelhoresLivros() {
-        livros.sort(Comparator.comparingDouble(LivroInterface::getNotaMedia).reversed());
+        livros.sort(Comparator.comparingDouble(LivroIf::getNotaMedia).reversed());
 
         System.out.println("\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",
@@ -70,7 +70,7 @@ public class Menu implements InterfaceMenu {
                 "Páginas");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        for (LivroInterface livro : livros) {
+        for (LivroIf livro : livros) {
             System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",
                     livro.getTitulo(),
                     livro.getAutor(),
@@ -87,13 +87,13 @@ public class Menu implements InterfaceMenu {
 
     @Override
     public void listarMelhoresAutores() {
-        autores.sort(Comparator.comparingDouble(InterfaceAutor::getNotaMediaGeral).reversed());
+        autores.sort(Comparator.comparingDouble(AutorIf::getNotaMediaGeral).reversed());
 
         System.out.println("\n------------------------------------------------------------------------");
         System.out.printf("%-20s%-20s%-20s\n", "Nome do Autor", "Nota Média Geral", "Livros Bem Avaliados");
         System.out.println("-------------------------------------------------------------------------");
 
-        for (InterfaceAutor autor : autores) {
+        for (AutorIf autor : autores) {
             System.out.printf("%-30s%-20.2f%-20d\n",
                     autor.getNome(),
                     autor.getNotaMediaGeral(),
