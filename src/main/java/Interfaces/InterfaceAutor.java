@@ -1,6 +1,6 @@
 package Interfaces;
 
-public interface AutorIf {
+public interface InterfaceAutor {
     String getNome();
     double getNotaMediaGeral();
     int getNumeroLivrosBemAvaliados();

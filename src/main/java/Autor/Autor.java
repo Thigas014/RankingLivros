@@ -1,8 +1,8 @@
 package Autor;
 
-import Interfaces.AutorIf;
+import Interfaces.InterfaceAutor;
 
-public class Autor implements AutorIf {
+public class Autor implements InterfaceAutor {
     private String nome;
     private double notaMediaGeral;
     private int numeroLivrosBemAvaliados;

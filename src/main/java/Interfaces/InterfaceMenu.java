@@ -1,6 +1,6 @@
 package Interfaces;
 
-public interface MenuIf {
+public interface InterfaceMenu {
     void carregarDados();
     void listarMelhoresLivros();
     void listarMelhoresAutores();
