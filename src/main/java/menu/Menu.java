@@ -2,22 +2,20 @@ package menu;
 
 import autor.Autor;
 import interfaces.AutorIf;
-import interfaces.LivroIf;
 import interfaces.MenuIf;
+import interfaces.LivroIf;
 import livro.Livro;
 
-import java.util.Comparator;
-import java.util.Scanner;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.logging.Logger;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 
 public class Menu implements MenuIf {
-    private List<LivroIf> livros = new ArrayList<>();
+    private List<LivroIf> livros =new ArrayList<>();
     private List<AutorIf> autores = new ArrayList<>();
-    private static final Logger logger = Logger.getLogger(Menu.class.getName());
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Menu sistemaMenu = new Menu();
         sistemaMenu.carregarDados();
 
@@ -25,31 +23,23 @@ public class Menu implements MenuIf {
         int opc;
 
         do {
-            String header = "\n-------------------------------------------------";
-            String menuTitle = String.format("%-25s", "               Menu Principal               ");
-            String option1 = String.format("%-5s%-30s", 1, "Listagem dos Melhores Livros");
-            String option2 = String.format("%-5d%-30s", 2, "Ranking dos Melhores Autores");
-            String option3 = String.format("%-5d%-30s", 3, "Sair");
-            String footer = "-------------------------------------------------";
-
-            logger.info(header);
-            logger.info(menuTitle);
-            logger.info(header);
-            logger.info(option1);
-            logger.info(option2);
-            logger.info(option3);
-            logger.info(footer);
-            logger.info("Escolha uma opção: ");
-
+            System.out.println("\n-------------------------------------------------");
+            System.out.printf("%-25s\n", "               Menu Principal               ");
+            System.out.println("-------------------------------------------------");
+            System.out.printf("%-5s%-30s\n", 1, "Listagem dos Melhores Livros");
+            System.out.printf("%-5d%-30s\n", 2, "Ranking dos Melhores Autores");
+            System.out.printf("%-5d%-30s\n", 3, "Sair");
+            System.out.println("-------------------------------------------------");
+            System.out.print("Escolha uma opção: ");
             opc = scanner.nextInt();
 
-            switch (opc) {
+            switch (opc){
                 case 1 -> sistemaMenu.listarMelhoresLivros();
                 case 2 -> sistemaMenu.listarMelhoresAutores();
-                case 3 -> logger.info("Saindo...");
-                default -> logger.warning("Opção Inválida! Tente novamente.");
+                case 3 -> System.out.println("Saindo...");
+                default -> System.out.println("Opcção Inválida! Tente denovo");
             }
-        } while (opc != 3);
+        } while (opc !=3);
 
         scanner.close();
     }
