@@ -1,7 +1,7 @@
 <p>O projeto consiste em criar um ranking de autores com os melhores livros a partir de um banco de dados já existente com dados de livros (título, autores, nota, isbn, isbn13, linguagem, número de páginas, avaliações e avaliações com texto). </p>
 
 ## Funcionalidades do Sistema:
-### menu Principal: 
+### Menu Principal: 
 O sistema terá um menu com as seguintes opções:
 
 ### Funcionalidades de Livros
@@ -14,7 +14,7 @@ As funcionalidades de livros permitirão que o sistema exiba, filtre e ordene os
   Para cada livro na lista, exibir informações detalhadas como:
   - Título
   - Título
-  - autor(es)
+  - Autor(es)
   - Nota média
   - Número de avaliações
   - Número de avaliações com texto (resenhas)
